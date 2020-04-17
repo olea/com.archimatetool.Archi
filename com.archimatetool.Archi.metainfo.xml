@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2020 Ismael Olea <ismael@olea.org> --> 
+<component type="desktop">
+    <id>com.archimatetool.Archi</id>
+    <name>Archi Archimate modelling tool</name>
+    <name xml:lang="es">Archi, herramienta de modelado con Archimate</name>>
+    <metadata_license>CC0-1.0</metadata_license>
+    <project_license>MIT</project_license>
+    <developer_name>The Archi Project</developer_name>   
+    <developer_name xml:lang="es">Proyecto Archi</developer_name>   
+    <summary>An open source modelling toolkit to create enterprise architechture ArchiMate models and sketches</summary>
+
+    <content_rating type="oars-1.1" />
+
+    <url type="homepage">https://www.archimatetool.com/</url>
+    <url type="bugtracker">https://github.com/archimatetool/archi/issues</url>
+    <url type="help">https://www.archimatetool.com/support/</url>
+    <url type="contact">https://www.archimatetool.com/contact/</url>
+    <url type="donation">https://www.archimatetool.com/donate/</url>
+  
+    <update_contact>ismael@olea.org</update_contact>
+    <launchable type="desktop-id">com.archimatetool.Archi.desktop</launchable>
+
+    <screenshots>
+        <screenshot xml:lang="en" type="default">
+            <image>https://raw.githubusercontent.com/olea/com.archimatetool.Archi/master/screenshots/screenshot-1.png</image>
+        </screenshot>
+        <screenshot xml:lang="en" type="default">
+            <image>https://raw.githubusercontent.com/olea/com.archimatetool.Archi/master/screenshots/screenshot-2.png</image>
+        </screenshot>
+        <screenshot xml:lang="en" type="default">
+            <image>https://raw.githubusercontent.com/olea/com.archimatetool.Archi/master/screenshots/screenshot-3.png</image>
+        </screenshot>
+        <screenshot xml:lang="en" type="default">
+            <image>https://raw.githubusercontent.com/olea/com.archimatetool.Archi/master/screenshots/screenshot-4.png</image>
+        </screenshot>
+        <screenshot xml:lang="en" type="default">
+            <image>https://raw.githubusercontent.com/olea/com.archimatetool.Archi/master/screenshots/screenshot-5.png</image>
+        </screenshot>
+        <screenshot xml:lang="en" type="default">
+            <image>https://raw.githubusercontent.com/olea/com.archimatetool.Archi/master/screenshots/screenshot-6.png</image>
+        </screenshot>
+        <screenshot xml:lang="en" type="default">
+            <image>https://raw.githubusercontent.com/olea/com.archimatetool.Archi/master/screenshots/screenshot-7.png</image>
+        </screenshot>
+        <screenshot xml:lang="en" type="default">
+            <image>https://raw.githubusercontent.com/olea/com.archimatetool.Archi/master/screenshots/screenshot-8.png</image>
+        </screenshot>
+    </screenshots>
+
+    <categories>
+    	<category>Development</category>
+    	<category>ComputerScience</category>
+    	<category>Java</category>
+        <category>Science</category>
+        <category>Engineering</category>
+    </categories>
+    <description>
+        <p>
+            The Archi® modelling toolkit is targeted toward all levels of Enterprise Architects and Modellers. It provides a low cost to entry solution to users who may be making their first steps in the ArchiMate modelling language, or who are looking for an open source, cross-platform ArchiMate modelling tool for their company or institution and wish to engage with the language within a TOGAF® or other Enterprise Architecture framework.
+        </p>
+        <p>
+            Archi® fulfils the needs of most Enterprise Architects and associated stakeholders, and has been designed to elegantly provide the main features required for ArchiMate modelling and is used globally by banks, insurance companies, industry, EA consultants, training organisations, universities, and students. It is the world’s most popular ArchiMate modelling tool.
+        </p>
+        <p>
+            ArchiMate® is an open and independent Enterprise Architecture modelling language that supports the description, analysis and visualization of architecture within and across business domains. ArchiMate is one of the open standards hosted by The Open Group and is fully aligned with TOGAF®.
+        </p>
+        <p>This bundle includes coArchi, the Model Collaboration plugin for Archi®.</p>
+    </description>   
+      <releases>
+          <release   version="4.6.0" date="2019-11-11" />
+       </releases>
+</component>

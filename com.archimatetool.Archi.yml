@@ -1,0 +1,75 @@
+app-id: com.archimatetool.Archi
+runtime: org.freedesktop.Platform
+runtime-version: "19.08"
+sdk: org.freedesktop.Sdk
+sdk-extensions:
+  - org.freedesktop.Sdk.Extension.openjdk11
+command: Archi
+
+finish-args:
+  - --share=ipc
+  - --socket=x11
+  - --socket=wayland
+  - --socket=pulseaudio
+  - --share=network
+  - --device=dri
+  - --filesystem=home
+
+  - --env=PATH=/usr/bin:/app/bin:/app/jre/bin
+  - --env=JAVA_HOME=/app/jre
+  - --env=JAVA=/app/jre/bin/java
+
+build-options:
+  env:
+    JAVA_HOME: /usr/lib/sdk/openjdk11/
+modules:
+  - name: openjdk
+    buildsystem: simple
+    build-commands:
+      - /usr/lib/sdk/openjdk11/install.sh
+
+  - name: Archi
+    no-autogen: true
+    sources:
+      # fetch binary for packing without compiling
+      - type: archive
+        url: https://www.archimatetool.com/downloads/78ef89ac08f/Archi-Linux64-4.6.0.tgz
+        sha256: e6ac2511c1f7f55e5b7573c33d4cc41911ec7016863b839ae5cc07980fc1bc7e
+        # strip-components: 0
+      
+      # Desktop file.
+      - type: file
+        path: com.archimatetool.Archi.desktop
+
+      # Icon file.
+      - type: file
+        path: com.archimatetool.Archi.png
+
+      # AppData.
+      - type: file
+        path: com.archimatetool.Archi.metainfo.xml
+
+    buildsystem: simple
+    build-commands:
+      - mkdir -p /app/Archi/ /app/bin/
+      - cp -a about.html Archi.ini artifacts.xml docs/ icon.xpm p2/ Archi configuration/ features/ plugins/ /app/Archi/
+      - ln -s /app/Archi/Archi /app/bin/
+      - rm -rf /app/Archi/jre/
+      - install -Dm644 com.archimatetool.Archi.desktop /app/share/applications/com.archimatetool.Archi.desktop
+      - install -Dm644 com.archimatetool.Archi.png /app/share/icons/hicolor/256x256/apps/com.archimatetool.Archi.png
+      - install -Dm644 com.archimatetool.Archi.metainfo.xml /app/share/metainfo/com.archimatetool.Archi.metainfo.xml
+
+  - name: colaboration-plugin
+    no-autogen: true
+    sources:
+      - type: archive
+        url: https://www.archimatetool.com/downloads/plugins/org.archicontribs.modelrepository_0.6.2.202004031233.archiplugin
+        sha256: 1306ec2bc45c098bdad0cfb8aecab39cdab4690c608366e7cfb61539ae666b60
+        dest-filename: colaboration-plugin.zip
+
+    buildsystem: simple
+    build-commands:
+      - ls -l org.archicontribs.modelrepository_0.6.2.202004031233.jar
+      - install -Dm644 org.archicontribs.modelrepository_0.6.2.202004031233.jar /app/Archi/plugins/
+      - install -Dm644 org.archicontribs.modelrepository.commandline_0.6.2.202004031233.jar /app/Archi/plugins/
+      
